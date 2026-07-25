@@ -1,0 +1,13 @@
+#include<iostream>
+using namespace std;
+int main(){
+  int T;
+  cin>>T;
+  for(int i=1; i<=T; i++){
+      int P,D;
+      cin>> P >> D;
+      int timetake = abs(D-P)*4 + P*4 + 19;
+      cout << "Case "<<i<< ": "<<timetake<<endl;
+  }
+    return 0;
+}
