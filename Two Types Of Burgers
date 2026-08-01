@@ -1,0 +1,46 @@
+#include<iostream>
+using namespace std;
+int main(){
+    int t;
+    cin >> t;
+    for(int i=0; i<t; i++){
+        int b,p,f;
+        cin >> b >> p >> f;
+        int h,c;
+        cin >> h >> c;
+        int burgers = b/2;
+        int profit = 0;
+        
+        if(h>=c){
+        if(p<burgers){
+            profit = profit + (p*h);
+            burgers = burgers - p;
+        } else{
+            profit = profit + (burgers*h);
+            burgers = 0;
+        }
+        if(f<burgers){
+            profit = profit + (f*c);
+        }else{
+               profit = profit + (burgers*c);
+        }
+        }else{
+        if(c>h){
+            if(f<burgers){
+            profit = profit + (f*c);
+            burgers = burgers - f;
+        }else{
+            profit = profit + (burgers*c);
+            burgers = 0;
+        }
+        if(p<burgers){
+            profit = profit + (p*h);
+        }else{
+            profit = profit + (burgers*h);
+        }
+        }
+        }
+        cout << profit<< endl;
+    }
+return 0;
+}
