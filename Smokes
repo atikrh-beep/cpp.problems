@@ -1,0 +1,16 @@
+#include <iostream>
+using namespace std;
+int main() {
+        int n,k;
+    while(cin>>n>>k){
+    int total = n;
+    int butts = n;
+    while(butts >= k){
+        int newcigg = butts/k;
+    total = total + newcigg; 
+     butts = newcigg + (butts%k);
+     }
+        cout<<total<<endl;
+    }
+    return 0;
+}
