@@ -1,0 +1,30 @@
+#include <iostream>
+#include <algorithm>
+using namespace std;
+int main(){
+    int n, d, r;
+    while (cin>>n>>d>>r){
+        if (n == 0)
+            break;
+        int m[100];
+        int e[100];
+
+        for (int i = 0; i < n; i++)
+            cin >> m[i];
+
+        for (int i = 0; i < n; i++)
+            cin >> e[i];
+
+        sort(m, m + n);
+        sort(e, e + n);
+
+        int answer = 0;
+        for (int i = 0; i < n; i++){
+            int total = m[i] + e[n - 1 - i];
+            if (total > d)
+                answer = answer + (total - d) * r;
+        }
+        cout << answer << endl;
+    }
+    return 0;
+}
